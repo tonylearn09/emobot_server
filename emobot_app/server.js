@@ -7,11 +7,11 @@ const app = express()
 const apiKey = '*****************';
 
 const img_dict = {
-  'joy': 'JOY',
+  'joy': 'HAPPY',
   'anger': 'ANGER',
-  'disgust': 'DISGUST',
+  'disgust': 'DISLIKE',
   'fear': 'FEAR',
-  'sadness': 'SADNESS',
+  'sadness': 'SAD',
   'confident': 'SURE',
   'tentative': 'TENTATIVE',
   'neutral': 'CALM',
