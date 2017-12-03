@@ -6,6 +6,18 @@ const app = express()
 
 const apiKey = '*****************';
 
+const img_dict = {
+  'joy': 'JOY',
+  'anger': 'ANGER',
+  'disgust': 'DISGUST',
+  'fear': 'FEAR',
+  'sadness': 'SADNESS',
+  'confident': 'SURE',
+  'tentative': 'TENTATIVE',
+  'neutral': 'CALM',
+  'analytical': 'ANALYTICAL'
+};
+
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs')
@@ -34,16 +46,16 @@ app.post('/', function (req, res) {
     });
 
     items.sort(function(first, second) {
-      return second[1] - first[1]
+      return second[1] - first[1];
     });
 
-    console.log(items)
-    best_emotion_name = items[0][0]
+    console.log(items);
+    best_emotion_name = items[0][0];
     
     //let emotion_name = Object.keys(emotion[0]);
     //console.log(emotion_name)
     //res.render('index', {emotion: emotion_name[0], img_name: 'SAD'});
-    res.render('index', {emotion: best_emotion_name, img_name: 'SAD'});
+    res.render('index', {emotion: best_emotion_name, img_name: img_dict[best_emotion_name]});
   });
 })
 
