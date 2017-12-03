@@ -1,1 +1,9 @@
 node_modules
+emobot_app/package.json
+*.pyc
+*.txt
+*.flac
+*.mp3
+*.json
+*.tar
+*.DS_Store
